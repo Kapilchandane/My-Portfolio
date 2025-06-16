@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapil - devloper Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        body {
+            background-color: rgb(6, 6, 36);
+            color: white;
+            font-family: "Hammersmith One", sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100px;
+            background-color: rgb(33, 33, 53);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 23px
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul li a:hover {
+            color: rgb(168, 75, 168);
+            transition: color 0.3s ease;
+            font-size: large;
+        }
+
+        .left {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .firstSection {
+            display: flex;
+            justify-content: space-around;
+            margin: 23px 0;
+        }
+
+        .firstSection div {
+            width: 30%;
+        }
+
+        .leftSection {
+            width: 50%;
+
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .rightSection img {
+            width: 80%;
+
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .purple {
+            color: rgb(246, 58, 246);
+        }
+
+        .aboutSection {
+            background-color: #1a1a2e;
+            padding: 60px 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .aboutContainer {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .aboutContainer h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #f638f6;
+            border-bottom: 3px solid #f638f6;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .aboutContainer p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin: 15px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background-color: #a84ba8;
+            color: white;
+            font-size: 1rem;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(168, 75, 168, 0.4);
+        }
+
+        .btn:hover {
+            background-color: #902c90;
+            transform: scale(1.05);
+        }
+
+        .contactSection {
+            background-color: #0f0f1c;
+            padding: 60px 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .contactContainer {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .contactContainer h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #f638f6;
+            border-bottom: 3px solid #f638f6;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .contactContainer p {
+            font-size: 1.1rem;
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        .contactInfo a {
+            color: #a84ba8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contactInfo a:hover {
+            color: #f638f6;
+            text-decoration: underline;
+        }
+
+        .contactForm {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .contactForm input,
+        .contactForm textarea {
+            width: 90%;
+            max-width: 500px;
+            margin: 10px 0;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .contactForm button {
+            padding: 12px 30px;
+            font-size: 1rem;
+            background-color: #a84ba8;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 10px;
+        }
+
+        .contactForm button:hover {
+            background-color: #902c90;
+            transform: scale(1.05);
+        }
+
+        /* Responsive layout */
+        @media (max-width: 768px) {
+
+            .contactContainer p,
+            .contactForm input,
+            .contactForm textarea {
+                font-size: 1rem;
+            }
+        }
+
+        .projectsSection {
+            padding: 60px 20px;
+            background-color: #1a1a2e;
+            color: white;
+            text-align: center;
+        }
+
+        .sectionTitle {
+            font-size: 2rem;
+            color: #f63af6;
+            margin-bottom: 30px;
+        }
+
+        .projectsContainer {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .projectCard {
+            background-color: #2e2e48;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            text-align: left;
+            transition: transform 0.2s ease;
+        }
+
+        .projectCard:hover {
+            transform: scale(1.02);
+        }
+
+        .projectCard a {
+            color: #a84ba8;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .projectCard a:hover {
+            text-decoration: underline;
+        }
+        html {
+    scroll-behavior: smooth;
+    
+}
+.skillsSection {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #0e0e1a;
+  color: white;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ed62ed;
+}
+
+.skillsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+.skillCircle {
+  position: relative;
+  width: 140px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  transform: rotate(-90deg);
+}
+
+.circle .bg {
+  fill: none;
+  stroke: #3a3a5a;
+  stroke-width: 10;
+}
+
+.circle .progress {
+  fill: none;
+  stroke: #d1d9dd;
+  stroke-width: 10;
+  stroke-linecap: round;
+  stroke-dasharray: 314;
+  stroke-dashoffset: calc(314 - (314 * var(--percent)) / 100);
+  transition: stroke-dashoffset 1s ease-in-out;
+}
+
+.skillText {
+  position: absolute;
+  top: 35px;
+  text-align: center;
+  color: white;
+}
+
+.skillText .number {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #f9f3a8;
+}
+
+.skillText p {
+  margin-top: 4px;
+  font-size: 0.9rem;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Kapil's Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="firstSection">
+
+            <div class="leftSection">
+                <h2>Hi, I'm <span class="purple">Kapil Chandane</span></h2><br>
+                <p>A passionate <strong>Full Stack Developer</strong> skilled in Java, Spring Boot, React.js, and
+                    Node.js.<br>
+                    I love building efficient, scalable, and user-friendly web applications.</p><br>
+
+                <a href="KapilJagdishChandaneResume.pdf" download class="btn">📄 Download CV</a>
+            </div>
+
+            <div class="rightSection">
+                <img src="PngItem_1127587.png" alt="Kapil's Image"
+                    style="width: 100%; height: auto; border-radius: 10px;">
+            </div>
+
+        </section>
+        <section class="aboutSection" id="about">
+            <div class="aboutContainer">
+                <h2>About Me</h2>
+                <p>
+                    Hello! I'm <span class="purple">Kapil Chandane</span>, a dedicated and enthusiastic Full Stack
+                    Developer with a strong foundation in web technologies. I specialize in building robust,
+                    user-friendly, and scalable web applications using modern frameworks like <strong>Java, Spring Boot,
+                        Hibernate, React.js,</strong> and <strong>Node.js</strong>.
+                </p>
+                <p>
+                    I enjoy solving real-world problems through clean, efficient code and have a strong interest in
+                    continuous learning and exploring new tools and technologies. Whether it's working on the backend
+                    logic or designing intuitive front-end interfaces, I take pride in delivering high-quality
+                    solutions.
+                </p>
+                <p>
+                    When I'm not coding, you'll find me exploring tech blogs, working on personal projects, or
+                    experimenting with UI/UX design.
+                </p>
+            </div>
+        </section>
+
+        <section class="skillsSection" id="skills">
+  <h2 class="sectionTitle">My Skills</h2>
+  <div class="skillsContainer">
+
+    <div class="skillCircle">
+      <svg class="circle">
+        <circle class="bg" cx="60" cy="60" r="50" />
+        <circle class="progress" cx="60" cy="60" r="50" style="--percent: 90;" />
+      </svg>
+      <div class="skillText">
+        <div class="number">90%</div>
+        <p>HTML</p>
+      </div>
+    </div>
+
+    <div class="skillCircle">
+      <svg class="circle">
+        <circle class="bg" cx="60" cy="60" r="50" />
+        <circle class="progress" cx="60" cy="60" r="50" style="--percent: 85;" />
+      </svg>
+      <div class="skillText">
+        <div class="number">85%</div>
+        <p>CSS</p>
+      </div>
+    </div>
+
+    <div class="skillCircle">
+      <svg class="circle">
+        <circle class="bg" cx="60" cy="60" r="50" />
+        <circle class="progress" cx="60" cy="60" r="50" style="--percent: 80;" />
+      </svg>
+      <div class="skillText">
+        <div class="number">80%</div>
+        <p>JavaScript</p>
+      </div>
+    </div>
+
+    <div class="skillCircle">
+      <svg class="circle">
+        <circle class="bg" cx="60" cy="60" r="50" />
+        <circle class="progress" cx="60" cy="60" r="50" style="--percent: 75;" />
+      </svg>
+      <div class="skillText">
+        <div class="number">75%</div>
+        <p>React.js</p>
+      </div>
+    </div>
+
+    <div class="skillCircle">
+      <svg class="circle">
+        <circle class="bg" cx="60" cy="60" r="50" />
+        <circle class="progress" cx="60" cy="60" r="50" style="--percent: 80;" />
+      </svg>
+      <div class="skillText">
+        <div class="number">80%</div>
+        <p>Spring Boot</p>
+      </div>
+    </div>
+
+    <div class="skillCircle">
+      <svg class="circle">
+        <circle class="bg" cx="60" cy="60" r="50" />
+        <circle class="progress" cx="60" cy="60" r="50" style="--percent: 85;" />
+      </svg>
+      <div class="skillText">
+        <div class="number">85%</div>
+        <p>Angular</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+        <section class="projectsSection" id="projects">
+            <h2 class="sectionTitle">My Projects</h2>
+            <div class="projectsContainer">
+                <!-- Project 1 -->
+                <div class="projectCard">
+                    <h3>Smart Disease Prediction App</h3>
+                    <p>AI-based health prediction system built using React.js and Flask. It takes symptoms and suggests
+                        probable diseases using ML.</p>
+                    <p><strong>Tech Stack:</strong> Python, Flask, React.js, ML</p>
+                    <a href="https://github.com/kapilchandane/disease-app" target="_blank">GitHub</a> |
+                    <a href="#" target="_blank">Live Demo</a>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="projectCard">
+                    <h3>Task Manager Web App</h3>
+                    <p>A full-stack task management tool with user login, task tracking and filtering.</p>
+                    <p><strong>Tech Stack:</strong> Java, Spring Boot, MySQL, React.js</p>
+                    <a href="https://github.com/kapilchandane/task-manager" target="_blank">GitHub</a> |
+                    <a href="#" target="_blank">Live Demo</a>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="projectCard">
+                    <h3>Chat App with Socket.IO</h3>
+                    <p>Real-time group chat application with socket programming.</p>
+                    <p><strong>Tech Stack:</strong> Node.js, Express.js, Socket.IO</p>
+                    <a href="https://github.com/kapilchandane/chat-app" target="_blank">GitHub</a> |
+                    <a href="#" target="_blank">Live Demo</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="contactSection" id="contact">
+            <div class="contactContainer">
+                <h2>Contact Me</h2>
+                <p>I'm open to freelance work, job opportunities, and collaborations. Let's get in touch!</p>
+
+                <div class="contactInfo">
+                    <p>📧 <strong>Email:</strong> <a href="mailto:chandanekapil16@gmail.com"
+                            target="-blank">chandanekapil16@gmail.com</a></p>
+                    <p>📞 <strong>Phone:</strong> +91-9673681767</p>
+                    <p>🔗 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kapilchandane"
+                            target="_blank">linkedin.com/in/kapilchandane</a></p>
+                    <p>💻 <strong>GitHub:</strong> <a href="https://github.com/kapilchandane"
+                            target="_blank">github.com/kapilchandane</a></p>
+                </div>
+
+                <form class="contactForm" action="https://formspree.io/f/mgvyodpb" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="_replyto" placeholder="Your Email" required>
+                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+                <div class="contactForm">
+                    <p>Feel free to reach out to me via the form above or through my social media links!</p>
+                </div>
+            </div>
+        </section>
+
+
+
+    </main>
+
+</body>
+
+</html>
